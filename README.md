@@ -22,5 +22,14 @@ An example of the folder naming convention is as follows:
 
 The test set was randomly sampled using the script/split_tv.py script.
 
+Since the fine-tuned model cannot be directly evaluated using the dp test command, we employed the DPPTPredict.py script to perform predictions with the fine-tuned model. The accuracy of the model is assessed by comparing the predicted results with the original reference data.
+
+The script dpa2_finetune_rmse.py is used to evaluate the error between the predicted data and the original reference data. It can be executed with the following command,where dir_name is the directory containing the original data, and predict_dir_name is the directory containing the predicted results:
+
+
+python dpa2_finetune_rmse.py dir_name predict_dir_name
+
+
+
 
 
