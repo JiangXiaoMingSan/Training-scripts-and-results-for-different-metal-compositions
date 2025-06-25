@@ -1,0 +1,150 @@
+{
+  "_comment1": " model parameters",
+  "model": {
+    "type_map": [
+      "V",
+      "Nb",
+      "Mo",
+      "Ta",
+      "W"
+    ],
+"use_srtab": "./zbl_potential_VNbMoTaW.txt",
+       "smin_alpha": 0.1,
+       "sw_rmin": 1.0,
+       "sw_rmax": 1.7,
+    "descriptor": {
+      "type": "se_atten_v2",
+      "sel": 120,
+      "rcut_smth": 0.50,
+      "rcut": 6.00,
+      "neuron": [
+        25,
+        50,
+        100
+      ],
+      "resnet_dt": false,
+      "axis_neuron": 16,
+      "seed": 1,
+      "attn": 128,
+      "attn_layer": 0,
+      "attn_dotr": true,
+      "attn_mask": false,
+      "precision": "float64",
+      "_comment2": " that's all"
+    },
+    "fitting_net": {
+      "neuron": [
+        240,
+        240,
+        240
+      ],
+      "resnet_dt": true,
+      "precision": "float64",
+      "seed": 1,
+      "_comment3": " that's all"
+    },
+    "_comment4": " that's all"
+  },
+
+  "learning_rate": {
+    "type": "exp",
+    "decay_steps": 5000,
+    "start_lr": 0.001,
+    "stop_lr": 3.51e-8,
+    "_comment5": "that's all"
+  },
+
+  "loss": {
+    "type": "ener",
+    "start_pref_e": 0.02,
+    "limit_pref_e": 1,
+    "start_pref_f": 1000,
+    "limit_pref_f": 1,
+    "start_pref_v": 0,
+    "limit_pref_v": 0,
+    "_comment6": " that's all"
+  },
+
+  "training": {
+    "training_data": {
+      "systems": [
+"./train/V0Nb0Mo0Ta0W117",
+"./train/V0Nb0Mo0Ta0W118",
+"./train/V0Nb0Mo0Ta0W12",
+"./train/V0Nb0Mo0Ta0W121",
+"./train/V0Nb0Mo0Ta0W122",
+"./train/V0Nb0Mo0Ta0W128",
+"./train/V0Nb0Mo0Ta0W144",
+"./train/V0Nb0Mo0Ta0W252",
+"./train/V0Nb0Mo0Ta0W53",
+"./train/V0Nb0Mo0Ta0W54",
+"./train/V0Nb0Mo0Ta0W55",
+"./train/V0Nb0Mo0Ta117W0",
+"./train/V0Nb0Mo0Ta118W0",
+"./train/V0Nb0Mo0Ta121W0",
+"./train/V0Nb0Mo0Ta122W0",
+"./train/V0Nb0Mo0Ta128W0",
+"./train/V0Nb0Mo0Ta12W0",
+"./train/V0Nb0Mo0Ta144W0",
+"./train/V0Nb0Mo0Ta252W0",
+"./train/V0Nb0Mo0Ta53W0",
+"./train/V0Nb0Mo0Ta54W0",
+"./train/V0Nb0Mo0Ta55W0",
+"./train/V0Nb0Mo117Ta0W0",
+"./train/V0Nb0Mo118Ta0W0",
+"./train/V0Nb0Mo121Ta0W0",
+"./train/V0Nb0Mo122Ta0W0",
+"./train/V0Nb0Mo128Ta0W0",
+"./train/V0Nb0Mo12Ta0W0",
+"./train/V0Nb0Mo144Ta0W0",
+"./train/V0Nb0Mo252Ta0W0",
+"./train/V0Nb0Mo53Ta0W0",
+"./train/V0Nb0Mo54Ta0W0",
+"./train/V0Nb0Mo55Ta0W0",
+"./train/V0Nb117Mo0Ta0W0",
+"./train/V0Nb118Mo0Ta0W0",
+"./train/V0Nb121Mo0Ta0W0",
+"./train/V0Nb122Mo0Ta0W0",
+"./train/V0Nb128Mo0Ta0W0",
+"./train/V0Nb12Mo0Ta0W0",
+"./train/V0Nb144Mo0Ta0W0",
+"./train/V0Nb252Mo0Ta0W0",
+"./train/V0Nb53Mo0Ta0W0",
+"./train/V0Nb54Mo0Ta0W0",
+"./train/V0Nb55Mo0Ta0W0",
+"./train/V117Nb0Mo0Ta0W0",
+"./train/V118Nb0Mo0Ta0W0",
+"./train/V121Nb0Mo0Ta0W0",
+"./train/V122Nb0Mo0Ta0W0",
+"./train/V128Nb0Mo0Ta0W0",
+"./train/V12Nb0Mo0Ta0W0",
+"./train/V144Nb0Mo0Ta0W0",
+"./train/V252Nb0Mo0Ta0W0",
+"./train/V53Nb0Mo0Ta0W0",
+"./train/V54Nb0Mo0Ta0W0",
+"./train/V55Nb0Mo0Ta0W0"
+
+      ],
+      "batch_size": "auto",
+      "_comment7": "that's all"
+    },
+    "validation_data": {
+      "systems": [
+"./valid/__5alloy_valid_data_Mo0Nb0Ta0V0W54",
+"./valid/__5alloy_valid_data_Mo54Nb0Ta0V0W0"
+
+      ],
+      "batch_size": 1,
+      "numb_btch": 3,
+      "_comment8": "that's all"
+    },
+    "numb_steps": 10000000,
+    "seed": 10,
+    "disp_file": "lcurve.out",
+    "disp_freq": 100,
+    "save_freq": 10000,
+    "_comment9": "that's all"
+  },
+
+  "_comment10": "that's all"
+}
